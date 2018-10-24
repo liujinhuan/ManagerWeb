@@ -30,7 +30,7 @@ export default class Game extends Component{
     render(){
         return (
             <div>
-                Game
+                Game112288
                 <ul>
                     {this.state.stories.length>0?this.renderLi():null}
                 </ul>

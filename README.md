@@ -71,6 +71,12 @@ Module not found: Error: Can't resolve 'App.css' in '/Users/gl177/Documents/BBH/
 + 添加页面基本逻辑
 
 + 添加请求接口、不用isomorphic-fetch的话、也可以用jQuery ajax
-npm install --save isomorphic-
+npm install --save isomorphic-fetch
 
 fetch的promise还是要看看
+
+
+
+1025 
+拉个新分支做下面的的事情？？？
+添加react-router、redux、多页打包再看看、还有热加载 能不能不用react-hot-loader
