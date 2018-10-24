@@ -1,0 +1,31 @@
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    height: 400px;
+    width: 800px;
+}
+.bottom{
+    display: flex;
+    flex:1;
+}
+.bleftContainer{
+    display: flex;
+    height:40px;
+}
+.bleftbody{
+    background-color: #ff664f;
+    height: 200px;
+}
+.bleft{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.bright{
+    flex: 1;
+    /* display: flex; */
+}
