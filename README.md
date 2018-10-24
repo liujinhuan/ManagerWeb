@@ -67,3 +67,10 @@ Module not found: Error: Can't resolve 'App.css' in '/Users/gl177/Documents/BBH/
 
 添加loader
 + npm install style-loader css-loader --save-dev
+
++ 添加页面基本逻辑
+
++ 添加请求接口、不用isomorphic-fetch的话、也可以用jQuery ajax
+npm install --save isomorphic-
+
+fetch的promise还是要看看
