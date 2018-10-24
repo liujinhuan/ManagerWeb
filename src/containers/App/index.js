@@ -4,6 +4,7 @@ import Home from '../../components/Home/index.js'
 import Game from '../../components/Game/index.js'
 import News from '../../components/News/index.js'
 import Service from '../../components/Service/index.js'
+import Register from '../../components/Register/index.js'
 
 export default class App extends Component{
     constructor(props){
@@ -31,6 +32,7 @@ export default class App extends Component{
                     <div className="top1" onClick={()=>{this.changeTab(2)}}>咨询</div>
                     <div className="top1" onClick={()=>{this.changeTab(3)}}>游戏</div>
                     <div className="top1" onClick={()=>{this.changeTab(4)}}>客服</div>
+                    <div className="top1" onClick={()=>{this.changeTab(5)}}>注册</div>
                 </div>
                 {
                     this.state.step == 1 ?<Home></Home>:null
@@ -43,6 +45,9 @@ export default class App extends Component{
                 }
                 {
                     this.state.step == 4 ? <Service></Service>:null
+                }
+                {
+                    this.state.step == 5 ? <Register></Register>:null
                 }
             </div>
         )
