@@ -10,7 +10,7 @@ export default class Service extends Component{
     }
     render(){
         return (
-            <div>
+            <div className="bg">
                 Service
             </div>
         )

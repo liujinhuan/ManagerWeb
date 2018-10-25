@@ -14,13 +14,23 @@ export default class Register extends Component{
             isLogin:true
         })
     }
+    gotoRegister = ()=>{
+        alert("register success!!")
+        this.props.gotoHome && this.props.gotoHome()
+    }
+    closeWin = ()=>{
+        this.setState({
+            isLogin:false
+        })
+    }
     render(){
         return (
             <div>
-                <div className="btn">Register</div>
+                <div className="btn" onClick={()=>{this.gotoRegister()}}>Register</div>
                 <div className="btn" onClick={()=>{this.gotoLogin()}}>Login</div>
                 {
-                    this.state.isLogin ? <Login></Login>: null
+                    this.state.isLogin ? <Login
+                    closeWin = {()=>{this.closeWin()}}></Login>: null
                 }
             </div>
             

@@ -5,8 +5,13 @@ export default class Home extends Component{
     constructor(props){
         super(props)
         this.state ={
-            
+            content:1
         }
+    }
+    change = (index)=>{
+        this.setState({
+            content:index
+        })
     }
     render(){
         return (

@@ -5,18 +5,16 @@ export default class Login extends Component{
     constructor(props){
         super(props)
         this.state ={
-            isLogin: false
         }
     }
-    gotoLogin = ()=>{
-        this.setState({
-            isLogin:true
-        })
+    login = ()=>{
+        alert("login success")
+        this.props.closeWin && this.props.closeWin()
     }
     render(){
         return (
             <div className="popWin">
-                <div className="innerWin">Login</div>
+                <div className="innerWin"><div className="loginBtn" onClick={()=>{this.login()}}>Login</div></div>
             </div>
             
         )

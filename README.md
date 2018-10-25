@@ -67,6 +67,8 @@ Module not found: Error: Can't resolve 'App.css' in '/Users/gl177/Documents/BBH/
 
 添加loader
 + npm install style-loader css-loader --save-dev
+style-loader 用于将css插入到html中
+css-loader 用于解析css
 
 + 添加页面基本逻辑
 
@@ -74,6 +76,28 @@ Module not found: Error: Can't resolve 'App.css' in '/Users/gl177/Documents/BBH/
 npm install --save isomorphic-fetch
 
 fetch的promise还是要看看
+
++ npm install url-loader --save-dev
++ npm install --save-dev mini-css-extract-plugin 拆出css文件为独立的文件
+
+__DEV__?'style-loader':MiniCssExtractPlugin.loader,
+// 这里要区分环境的、不区分环境的话，开发环境下的热更新就失效了。也就是说，当你修改了一个样式文件，不手动刷新的情况下，页面是不会自动变化的了。用style-loader才行
+
+所以安装cross-env
++ npm install cross-env --save-dev
++ "start": "cross-env NODE_ENV=development node bin/dev-server",
++ npm start  然后再试试修改css文件的热更新--ok了
+
++ new MiniCssExtractPlugin({
+            filename: "css/[name]_[hash:8].css",
+            chunkFilename: "[id].css"
+        }), 单独的文件提取出来，需要指定fileName、不用的话 打包不到css里面
+
++ 图片打包
++ npm install url-loader --save-dev
+
++ css 被覆盖了
+
 
 
 

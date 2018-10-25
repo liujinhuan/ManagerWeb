@@ -14,14 +14,15 @@ export default class App extends Component{
             step:1
         }
     }
-    change = (index)=>{
-        this.setState({
-            content:index
-        })
-    }
+    
     changeTab = (index)=>{
         this.setState({
             step:index
+        })
+    }
+    gotoHome = ()=>{
+        this.setState({
+            step:1
         })
     }
     render(){
@@ -47,7 +48,7 @@ export default class App extends Component{
                     this.state.step == 4 ? <Service></Service>:null
                 }
                 {
-                    this.state.step == 5 ? <Register></Register>:null
+                    this.state.step == 5 ? <Register gotoHome={()=>{this.gotoHome()}}></Register>:null
                 }
             </div>
         )
