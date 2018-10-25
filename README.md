@@ -126,4 +126,9 @@ https://blog.csdn.net/DeepLies/article/details/79005507
 
 接入路由
 
-+ npm install react-router-dom --save-dev
++ npm install react-router-dom --save
+
+接入redux
+
++ npm install --save redux
++ npm install --save react-redux
