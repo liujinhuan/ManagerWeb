@@ -94,16 +94,8 @@ __DEV__?'style-loader':MiniCssExtractPlugin.loader,
         }), 单独的文件提取出来，需要指定fileName、不用的话 打包不到css里面
 
 + 图片打包
-+ npm install url-loader --save-dev
++ npm i file-loader url-loader --save-dev
 
-+ css 被覆盖了
-
-## 遇到的问题：
-+ 同名的css打包到同一个文件中，后面的把前面的覆盖了
-+ 图片并没有单独出一个文件
-
-## 可参考的地址
-https://blog.csdn.net/DeepLies/article/details/79005507
 
 + 引用了scss后
 + npm install postcss-loader node-sass sass-loader --save-dev 这里安装的会比较慢
@@ -112,6 +104,26 @@ https://blog.csdn.net/DeepLies/article/details/79005507
 + resolve . extensions 能够在用户引入的时候不带扩展
 <!-- extensions: ['.js', '.scss'], -->
 
+
+ + "postcss-loader", 添加样式的前缀
+
+
+## 遇到的问题：
++ 同名的css打包到同一个文件中，后面的把前面的覆盖了
++ 图片并没有单独出一个文件
+
+
+## 可参考的地址
+https://blog.csdn.net/DeepLies/article/details/79005507
+
+
+
 1025 
 拉个新分支做下面的的事情？？？
 添加react-router、redux、多页打包再看看、还有热加载 能不能不用react-hot-loader
+
+
+
+接入路由
+
++ npm install react-router-dom --save-dev

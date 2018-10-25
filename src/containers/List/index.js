@@ -2,7 +2,7 @@ import React ,{Component} from 'react'
 import './index.css'
 import {Link} from 'react-router-dom'
 
-export default class Detail extends Component{
+export default class List extends Component{
     constructor(props){
         super(props)
         this.state ={
@@ -12,8 +12,8 @@ export default class Detail extends Component{
     
     render(){
         return (
-            <div id='detail'>
-                <div className="link"><Link to='/list'>to List</Link></div>
+            <div>
+                <div className="link"><Link to='/detail'>to detail</Link></div>
                 <div className="link"><Link to='/'>back home</Link></div>
             </div>
         )

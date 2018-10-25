@@ -1,0 +1,12 @@
+#detail{
+    
+}
+.link{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #ff664f;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

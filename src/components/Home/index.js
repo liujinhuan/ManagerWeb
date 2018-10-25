@@ -1,5 +1,6 @@
 import React ,{Component} from 'react'
 import './index.css'
+import {Link} from 'react-router-dom'
 
 export default class Home extends Component{
     constructor(props){
@@ -28,7 +29,11 @@ export default class Home extends Component{
                         <div className="bleftbody">{this.state.content}</div>
                     </div>
                     <div className="bright">
-                        <div className="top1">推荐游戏</div>
+                        <div className="bleftContainer">
+                            <div className="top1">推荐游戏</div>
+                        </div>
+                        <div className="link"><Link to='/detail'>to detail</Link></div>
+                        <div className="link" style={{marginTop:20}}><Link to='/list'>tolist</Link></div>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader';
 import 'babel-polyfill';
-import App from './containers/App/index.js'
+import App from './containers/index'
+import Routes from './routers/index'
 
 const renderDom = Component => {
     render(
         <AppContainer>
-            <Component />
+            <BrowserRouter>
+                <Component > 
+                    <Routes></Routes>   
+                </Component>
+            </BrowserRouter>
         </AppContainer>,
         document.getElementById('app')
     );
@@ -15,8 +21,8 @@ const renderDom = Component => {
 renderDom(App);
 
 if (module.hot) {
-    module.hot.accept('./containers/App/index.js', () => {
-        const App = require('./containers/App/index.js').default;
+    module.hot.accept('./containers/index', () => {
+        const App = require('./containers/index').default;
         renderDom(App);
     })
 }

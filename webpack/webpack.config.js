@@ -52,19 +52,26 @@ module.exports = {
                     __DEV__?'style-loader': MiniCssExtractPlugin.loader,
                     // 这里要区分环境的、不区分环境的话，开发环境下的热更新就失效了。也就是说，当你修改了一个样式文件，不手动刷新的情况下，页面是不会自动变化的了。用style-loader才行
                     // MiniCssExtractPlugin.loader,
-                    'css-loader'
+                    {
+                        loader:'css-loader',
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            plugins:[
+                                require('autoprefixer')({
+                                    browsers:['last 5 version']
+                                })
+                            ]
+                        }
+                    }
                 ],
             },
             {
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                  {
-                    loader: 'url-loader',
-                    options: {
-                      limit: 8192
-                    }
-                  }
-                ]
+                test: /\.(png|jpg|gif|woff|svg|eot|woff2|tff)$/,
+                use: 'url-loader?limit=8129', 
+                //注意后面那个limit的参数，当你图片大小小于这个限制的时候，会自动启用base64编码图片
+                exclude: /node_modules/
             }
         ]
     },
@@ -81,15 +88,16 @@ module.exports = {
     ]
 }
 
+
 if(__DEV__){
+    module.exports.plugins.push(
+        new webpack.HotModuleReplacementPlugin()
+    )
     module.exports.devtool = 'cheap-module-eval-source-map'
     module.exports.entry.unshift(
         'babel-polyfill',
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:9090',
         'webpack/hot/only-dev-server'
-    )
-    module.exports.plugins.push(
-        new webpack.HotModuleReplacementPlugin()
     )
 }

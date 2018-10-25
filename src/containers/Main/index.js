@@ -6,7 +6,7 @@ import News from '../../components/News/index.js'
 import Service from '../../components/Service/index.js'
 import Register from '../../components/Register/index.js'
 
-export default class App extends Component{
+export default class Main extends Component{
     constructor(props){
         super(props)
         this.state ={
