@@ -1,4 +1,5 @@
 const path = require('path');
+const glob = require('glob');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -8,15 +9,29 @@ let __PROD__ =  process.env.NODE_ENV === 'production'
 let __DEV__ = process.env.NODE_ENV === 'development'
 let __TEST__ =  process.env.NODE_ENV === 'test'
 
+function getEntries (globPath){
+    const files = glob.sync(globPath)
+    const entries = {}
+  
+    files.forEach(file => {
+      const dirname = path.dirname(file).replace(/.(\/|\\\\)src(\/|\\\\)containers(\/|\\\\)(.*?)/, '')
+  
+      entries[dirname] = file
+    })
+    console.log(entries)
+    return entries
+  }
 
 module.exports = {
     mode:'development',
     entry: [
         path.resolve(__dirname, '../src/index.js'),//指定入口文件，程序从这里开始编译,__dirname当前所在目录, ../表示上一级目录, ./同级目录
     ], 
+    // entry:getEntries('./src/containers/**/*.js'),
     output: {
         path: path.resolve(__dirname, '../dist'), // 输出的路径
-        filename: 'js/[name]_[hash:8].js',  // 打包后文件
+        filename: 'statics/js/[name]_[hash:8].js',  // 打包后文件
+        // publicPath:'http://www.xhqb.com/'  // 在打包好的资源前面加前缀
     },
     module: {
         rules: [
@@ -55,7 +70,7 @@ module.exports = {
     },
     plugins:[
         new MiniCssExtractPlugin({
-            filename: "css/[name]_[hash:8].css",
+            filename: "statics/css/[name]_[hash:8].css",
             chunkFilename: "[id].css"
         }),
         new HtmlWebpackPlugin({

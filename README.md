@@ -98,8 +98,19 @@ __DEV__?'style-loader':MiniCssExtractPlugin.loader,
 
 + css 被覆盖了
 
+## 遇到的问题：
++ 同名的css打包到同一个文件中，后面的把前面的覆盖了
++ 图片并没有单独出一个文件
 
+## 可参考的地址
+https://blog.csdn.net/DeepLies/article/details/79005507
 
++ 引用了scss后
++ npm install postcss-loader node-sass sass-loader --save-dev 这里安装的会比较慢
++ npm install autoprefixer --save-dev
+
++ resolve . extensions 能够在用户引入的时候不带扩展
+<!-- extensions: ['.js', '.scss'], -->
 
 1025 
 拉个新分支做下面的的事情？？？
