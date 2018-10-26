@@ -1,12 +1,14 @@
 import React ,{Component} from 'react'
+import { connect } from 'react-redux'
 import './index.css'
 import Home from '../../components/Home/index.js'
 import Game from '../../components/Game/index.js'
 import News from '../../components/News/index.js'
 import Service from '../../components/Service/index.js'
 import Register from '../../components/Register/index.js'
+import {fetchDetail} from '../../actions/detail'
 
-export default class Main extends Component{
+class Main extends Component{
     constructor(props){
         super(props)
         this.state ={
@@ -26,15 +28,17 @@ export default class Main extends Component{
         })
     }
     render(){
+        console.log('2------',this.props.mainData)
         return (
             <div className="bg">
                 <div className="top">
-                    <div className="top1" onClick={()=>{this.changeTab(1)}}>首页</div>
-                    <div className="top1" onClick={()=>{this.changeTab(2)}}>咨询</div>
-                    <div className="top1" onClick={()=>{this.changeTab(3)}}>游戏</div>
-                    <div className="top1" onClick={()=>{this.changeTab(4)}}>客服</div>
-                    <div className="top1" onClick={()=>{this.changeTab(5)}}>注册</div>
+                    <div className="top1" onClick={()=>{this.changeTab(1)}}>TAB1</div>
+                    <div className="top1" onClick={()=>{this.changeTab(2)}}>TAB2</div>
+                    <div className="top1" onClick={()=>{this.changeTab(3)}}>TAB3</div>
+                    <div className="top1" onClick={()=>{this.changeTab(4)}}>TAB4</div>
+                    <div className="top1" onClick={()=>{this.changeTab(5)}}>TAB5</div>
                 </div>
+                <div onClick={()=>{this.props.onFetchDetail('2')}}>fetch Detail</div>
                 {
                     this.state.step == 1 ?<Home></Home>:null
                 }
@@ -54,3 +58,26 @@ export default class Main extends Component{
         )
     }
 }
+
+
+const mapStateToProps = state => {
+    console.log('mapStateToProps---',state)
+    return {
+        mainData: state.detailResucer
+    }
+}
+const mapDispatchToProps = dispatch => {
+    // console.log('mapDispatchToProps---',dispatch)
+    return {
+        onFetchDetail: id => {
+            dispatch(fetchDetail(id))
+        }
+    }
+}
+
+const VisibleMain = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Main)
+
+export default VisibleMain

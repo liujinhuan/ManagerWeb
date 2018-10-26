@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import 'babel-polyfill';
 import App from './containers/index'
 import Routes from './routers/index'
-import store from './store'
+import store from './store/index'
 
 const renderDom = Component => {
     render(

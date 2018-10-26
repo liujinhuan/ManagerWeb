@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import DetailReducer from './detail'
+import detailResucer from './detail'
 
 const reducers = combineReducers({
-    DetailReducer
+    detailResucer
 })
 
 export default reducers
