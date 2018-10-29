@@ -132,3 +132,7 @@ https://blog.csdn.net/DeepLies/article/details/79005507
 
 + npm install --save redux
 + npm install --save react-redux
+
+
+异步Action
++ npm install --save redux-thunk

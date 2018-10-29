@@ -5,7 +5,8 @@ import {
 
 let initialState = {
     detail:{},
-    id:null
+    id:null,
+    testDetail:[]
 }
 
 export default function detailResucer(state = initialState,action){

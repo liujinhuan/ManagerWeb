@@ -28,7 +28,7 @@ class Main extends Component{
         })
     }
     render(){
-        console.log('2------',this.props.mainData)
+        // console.log('2------',this.props.mainData)
         return (
             <div className="bg">
                 <div className="top">
@@ -38,7 +38,7 @@ class Main extends Component{
                     <div className="top1" onClick={()=>{this.changeTab(4)}}>TAB4</div>
                     <div className="top1" onClick={()=>{this.changeTab(5)}}>TAB5</div>
                 </div>
-                <div onClick={()=>{this.props.onFetchDetail('2')}}>fetch Detail</div>
+                {/* <div onClick={()=>{this.props.onFetchDetail('2')}}>fetch Detail</div> */}
                 {
                     this.state.step == 1 ?<Home></Home>:null
                 }
@@ -61,7 +61,7 @@ class Main extends Component{
 
 
 const mapStateToProps = state => {
-    console.log('mapStateToProps---',state)
+    // console.log('mapStateToProps---',state)
     return {
         mainData: state.detailResucer
     }

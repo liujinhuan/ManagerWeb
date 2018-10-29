@@ -1,16 +1,20 @@
 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
 import reducers from '../reducers'
-import {fetchDetail} from '../actions/detail'
+// import {fetchDetail,fetchTest} from '../actions/detail'
 
-const resultStore = createStore(reducers)
-
-console.log('start store----',resultStore.getState())
-
-const unsubscribe = resultStore.subscribe(() =>
-    console.log('change store----',resultStore.getState())
+const resultStore = createStore(
+    reducers,
+    applyMiddleware(thunkMiddleware)
 )
 
-// resultStore.dispatch(fetchDetail('1'))
+// console.log('start store----',resultStore.getState())
+
+// const unsubscribe = resultStore.subscribe(() =>
+//     console.log('change store----',resultStore.getState())
+// )
+
+// resultStore.dispatch(fetchTest())
 
 export default resultStore
