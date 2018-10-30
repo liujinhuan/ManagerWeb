@@ -32,10 +32,10 @@ class Main extends Component{
         return (
             <div className="bg">
                 <div className="top">
-                    <div className="top1" onClick={()=>{this.changeTab(1)}}>TAB1</div>
+                    <div className="top1" onClick={()=>{this.changeTab(1)}}>TAB111</div>
                     <div className="top1" onClick={()=>{this.changeTab(2)}}>TAB2</div>
-                    <div className="top1" onClick={()=>{this.changeTab(3)}}>TAB3</div>
-                    <div className="top1" onClick={()=>{this.changeTab(4)}}>TAB4</div>
+                    <div className="top1" onClick={()=>{this.changeTab(3)}}>TAB333</div>
+                    <div className="top1" onClick={()=>{this.changeTab(4)}}>TAB4444</div>
                     <div className="top1" onClick={()=>{this.changeTab(5)}}>TAB5</div>
                 </div>
                 {/* <div onClick={()=>{this.props.onFetchDetail('2')}}>fetch Detail</div> */}

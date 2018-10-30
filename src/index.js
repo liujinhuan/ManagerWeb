@@ -25,8 +25,8 @@ const renderDom = Component => {
 renderDom(App);
 
 if (module.hot) {
-    module.hot.accept('./containers/index', () => {
-        const App = require('./containers/index').default;
+    module.hot.accept('./routers/index', () => {
+        const App = require('./routers/index').default;
         renderDom(App);
     })
 }
