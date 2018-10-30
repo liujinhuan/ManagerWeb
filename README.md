@@ -112,6 +112,10 @@ __DEV__?'style-loader':MiniCssExtractPlugin.loader,
 + 同名的css打包到同一个文件中，后面的把前面的覆盖了
 + 图片并没有单独出一个文件
 
+```
+图片不能打包？？
+npm install file-loader --save-dev
+```
 
 ## 可参考的地址
 https://blog.csdn.net/DeepLies/article/details/79005507
@@ -136,3 +140,5 @@ https://blog.csdn.net/DeepLies/article/details/79005507
 
 异步Action
 + npm install --save redux-thunk
+
+
