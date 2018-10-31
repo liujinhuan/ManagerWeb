@@ -7,6 +7,7 @@ import 'babel-polyfill';
 import App from './containers/index'
 import Routes from './routers/index'
 import store from './store/index'
+import './styles/reset.less'
 
 const renderDom = Component => {
     render(

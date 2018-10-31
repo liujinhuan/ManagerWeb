@@ -142,3 +142,9 @@ https://blog.csdn.net/DeepLies/article/details/79005507
 + npm install --save redux-thunk
 
 
++ 样式冲突的解决，改用scss 添加loader支持
++ npm install --save-dev less-loader less
+
+把px--rem
+PC端适配没整明白。。。
++ npm install --save-dev postcss-pxtorem
