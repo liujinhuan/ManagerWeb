@@ -72,22 +72,25 @@ module.exports = {
             },
             {
                 test:/\.less$/,
-                use:['style-loader','css-loader',
-                
-                'less-loader',{
-                    loader: "postcss-loader",
-                    options: {
-                        plugins:[
-                            require('autoprefixer')({
-                                browsers:['last 5 version']
-                            }),
-                            // require('postcss-pxtorem')({
-                            //     rootValue: 75,
-                            //     propWhiteList: []
-                            // })
-                        ]
+                use:[
+                    __DEV__?'style-loader': MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'less-loader',
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            plugins:[
+                                require('autoprefixer')({
+                                    browsers:['last 5 version']
+                                }),
+                                // require('postcss-pxtorem')({
+                                //     rootValue: 75,
+                                //     propWhiteList: []
+                                // })
+                            ]
+                        }
                     }
-                }] // 编译顺序从右往左
+                ] // 编译顺序从右往左
             },
             {
                 test: /\.(png|jpg|gif|jpeg)$/,

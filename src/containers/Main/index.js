@@ -32,10 +32,30 @@ class Main extends Component{
         return (
             <div className="main">
                 <div className="header">
-                    <div className="item active" onClick={()=>{this.changeTab(1)}}><p className="ib">首页</p><p className="il">HOME</p></div>
-                    <div className="item" onClick={()=>{this.changeTab(2)}}><p className="ibb">首页</p><p className="ill">HOME</p></div>
-                    <div className="item" onClick={()=>{this.changeTab(3)}}><p className="ibb">首页</p><p className="ill">HOME</p></div>
-                    <div className="item" onClick={()=>{this.changeTab(4)}}><p className="ibb">首页</p><p className="ill">HOME</p></div>
+                    <div 
+                        className={this.state.step == 1 ? "item active" : "item" }
+                        onClick={()=>{this.changeTab(1)}}>
+                        <p className={this.state.step == 1 ? "ib" : "ibb" }>首页</p>
+                        <p className={this.state.step == 1 ? "il" : "ill" }>HOME</p>
+                    </div>
+                    <div 
+                        className={this.state.step == 2 ? "item active" : "item" }
+                        onClick={()=>{this.changeTab(2)}}>
+                        <p className={this.state.step == 2 ? "ib" : "ibb" }>首页</p>
+                        <p className={this.state.step == 2 ? "il" : "ill" }>HOME</p>
+                    </div>
+                    <div 
+                        className={this.state.step == 3 ? "item active" : "item" }
+                        onClick={()=>{this.changeTab(3)}}>
+                        <p className={this.state.step == 3 ? "ib" : "ibb" }>首页</p>
+                        <p className={this.state.step == 3 ? "il" : "ill" }>HOME</p>
+                    </div>
+                    <div 
+                        className={this.state.step == 4 ? "item active" : "item" }
+                        onClick={()=>{this.changeTab(4)}}>
+                        <p className={this.state.step == 4 ? "ib" : "ibb" }>首页</p>
+                        <p className={this.state.step == 4 ? "il" : "ill" }>HOME</p>
+                    </div>
                 </div>
                 <div className="content">
                     {

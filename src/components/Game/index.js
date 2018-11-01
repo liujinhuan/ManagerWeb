@@ -1,6 +1,6 @@
 import React ,{Component} from 'react'
 import fetch from 'isomorphic-fetch'
-import './index.css'
+import './index.less'
 
 export default class Game extends Component{
     constructor(props){
@@ -29,11 +29,20 @@ export default class Game extends Component{
     }
     render(){
         return (
-            <div>
-                Game112288
-                <ul>
+            <div className="game">
+                {/* <ul>
                     {this.state.stories.length>0?this.renderLi():null}
-                </ul>
+                </ul> */}
+                <div className="inner">
+                    <div className="inner-item">
+                        <div className="itemimg"></div>
+                        <div className="iteminfo">
+                            <span className="itemname">小程序开发者助手</span>
+                            <span className="itemnum">帮助开发者开发</span>
+                        </div>
+                        <div className="qrcode"></div>
+                    </div>
+                </div>
             </div>
         )
     }
